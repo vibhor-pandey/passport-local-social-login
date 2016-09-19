@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Authentication</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <style>
+            body{
+                 padding-top:30px; word-wrap:break-word; 
+             }
+
+             .btn {
+                padding: 14px 24px;
+                border: 0 none;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }      
+        </style>
+    </head>
+    <body>
+    <div class="container">
+
+        <div class="page-header">
+            <h1 class="text text-success"><span class="fa fa-user" /></span> Profile </h1>
+            <a href="/logout" class="btn btn-danger"> Logout</a>
+        </div>
+
+        <div class="row">
+            <% if(user.local.email != null){ %>            
+                <div class="col-sm-7">
+                    <div class="well">
+                        <h3 class="text text-primary"><span class="fa fa-user"></span> Local</h3>
+                            <p>
+                                <strong>ID </strong>: <%= user._id %><br><br>
+                                <strong>EMAIL </strong>: <%= user.local.email %><br><br>
+                                <strong>PASSWORD </strong>: <%= user.local.password %><br><br>
+                                <strong>NAME</strong>: <%= user.local.name %>
+                            </p>
+                    </div>
+                </div>
+            <%} else if(user.google.email != null){ %>
+                 <div class="col-sm-12">
+                    <div class="well">
+                        <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+                            <p>
+                                <strong>ID</strong>: <%= user.google.id %><br><br>
+                                <strong>TOKEN</strong>: <%= user.google.token %><br><br>
+                                <strong>EMAIL</strong>: <%= user.google.email %><br><br>
+                                <strong>NAME</strong>: <%= user.google.name %>
+                            </p>
+                    </div>
+                </div>
+            <%} else if(user.linkedin.id != null){ %>
+                 <div class="col-sm-12">
+                    <div class="well">
+                        <h3 class="text-info"><span class="fa fa-linkedin"></span> Linkedin</h3>
+                            <p>
+                                <strong>ID</strong>: <%= user.linkedin.id %><br><br>
+                                <strong>TOKEN</strong>: <%= user.linkedin.token %><br><br>
+                                <strong>EMAIL</strong>: <%= user.linkedin.email %><br><br>
+                                <strong>NAME</strong>: <%= user.linkedin.name %>
+                            </p>
+                    </div>
+                </div>
+            <%} else if(user.twitter.id != null){ %>
+                <div class="col-sm-12">
+                    <div class="well">
+                        <h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
+                            <p>
+                                <strong>ID</strong>: <%= user.twitter.id %><br><br>
+                                <strong>TOKEN</strong>: <%= user.twitter.token %><br><br>
+                                <strong>USERNAME</strong>: <%= user.twitter.username %><br><br>
+                                <strong>NAME</strong>: <%= user.twitter.name %>
+                            </p>
+                    </div>
+                </div>
+            <%} else if(user.github.id != null){ %>
+                <div class="col-sm-12">
+                    <div class="well">
+                        <h3 class="text-info"><span class="fa fa-github"></span> GitHub</h3>
+                            <p>
+                                <strong>ID</strong>: <%= user.github.id %><br><br>
+                                <strong>NAME</strong>: <%= user.github.name %><br><br>
+                                <strong>PROFILE</strong>:<a href= <%= user.github.profileUrl %> >
+                                    <%= user.github.profileUrl %>
+                                    </a>
+                            </p>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+    </body>
+</html>
