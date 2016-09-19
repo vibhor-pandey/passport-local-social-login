@@ -63,73 +63,13 @@ module.exports = function(passport) {
 								if (err){
 								    console.log("error generated...");
 								    throw err;
-						        }
-								console.log(uuid.v4());
-
-
-								User.findOne({'local.email': email}, function(err, user) {
-									var newLocalVerify = new User();
-									newLocalVerify.localVerify.userId = user._id;
-									var token = newLocalVerify.generateHash(uuid.v4())
-									newLocalVerify.localVerify.verificationToken = token;
-
-									/*var transporter = 
-										nodemailer.createTransport(
-											'smtps://vibhor.pandey@daffodilsw.com:/1317653.@smtp.gmail.com'
-										);*/
-
-									var smtpConfig = {
-									    host: 'smtp.gmail.com',
-									    port: 465,
-									    secure: true, // use SSL
-									    auth: {
-									        user: 'vibhor.pandey@daffodilsw.com',
-									        pass: '/1317653.'
-									    },
-									     tls:{
-    								    	rejectUnauthorized: false
-    									}
-									};
-
-									var transporter = nodemailer.createTransport(smtpTransport(smtpConfig));
-
-									transporter.verify(function(error, success) {
-										if (error) {
-										    console.log(error);
-										} else {
-										    console.log('Server is ready to take our messages');
-										}
-									});
-
-										var mailOptions = {
-										    from: 'vibhor.pandey@daffodilsw.com',
-										    to: 'vibhor.vibhu@gmail.com',
-										    subject: 'Account Activation',
-										    text: 'Please click on the given link',
-										    html: '<a href="127.0.0.1/verify?token="/>'
-										};
-										console.log('Message sent sefr');
-
-										transporter.sendMail(mailOptions, function(error, info){
-										    if(error){
-										    	console.log(error);
-										        return error;
-										    }
-										    console.log(info);	
-										});
-
-
-									newLocalVerify.save(function(err) {
-										if(err)
-											throw err;
-									});
-								});
-
-			                    return done(
-			                    	null,
-			                    	newUser, 
-			                    	req.flash('loginMessage', 'Verification Link has been sent to you.')
-			                    );
+						        	}
+						//console.log(uuid.v4());
+					                return done(
+					                   	null,
+					                    	newUser, 
+					                    	req.flash('loginMessage', 'Successfully Registered!')
+					                    );
 							});
 						}
 					});
