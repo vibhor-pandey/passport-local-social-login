@@ -4,29 +4,29 @@ module.exports = {
 
 	'googleAuth' : {
 
-		'clientID' : '432048353713-b6vkqoek2eq2peeau7fdl2c939cg5iu8.apps.googleusercontent.com',
-		'clientSecret' : '5GiAgzHFCax3PJO0KoAOBhX9',
+		'clientID' : 'your google client id',
+		'clientSecret' : 'your google client secret',
 		'callbackURL' : 'http://localhost:3000/auth/google/callback'
 	},
 
 	'linkedinAuth' : {
 
-		'clientID' : '81dhry59nhdg5k',
-		'clientSecret' : 'ejMdqRBTeEmptlOC',
+		'clientID' : 'your linkedin client id',
+		'clientSecret' : 'your google client secret',
 		'callbackURL' : 'http://127.0.0.1:3000/auth/linkedin/callback'
 	},
 
 	'twitterAuth' : {
 
-		'consumerKey' : 'U2W1KY0LqWUpRaoC54qPPwtf1',
-		'consumerSecret' : 'zlv17jJsuds7W8FkNKmkcbXnJv2UMXPi3KFtWINwr5LkQO51bf',
+		'consumerKey' : 'your twitter consumer key',
+		'consumerSecret' : 'your twitter consumer secret',
 		'callbackURL' : 'http://127.0.0.1:3000/auth/twitter/callback'
 	},
 
 	'githubAuth' : {
 
-		'clientID' : '884fcfd7927c40866ec4',
-		'clientSecret' : '99aa3a4099a1ebeab5914167ba03c864716049b6',
+		'clientID' : 'your github client id',
+		'clientSecret' : 'your github client secret',
 		'callbackURL' : 'http://127.0.0.1:3000/auth/github/callback'
 	}
 };
