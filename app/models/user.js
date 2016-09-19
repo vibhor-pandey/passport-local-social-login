@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
-
+//Mongo DB Schema for each type of Login/Signup
 var userSchema = mongoose.Schema({
 
 	local: {
