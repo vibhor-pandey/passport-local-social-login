@@ -1,0 +1,36 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "bluebird": "^3.4.6",
+    "body-parser": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~2.5.1",
+    "express": "3.4.8",
+    "express-session": "~1.0.0",
+    "jade": "*",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.5.10",
+    "morgan": "~1.0.0",
+    "node-uuid": "^1.4.7",
+    "nodemailer": "^2.6.0",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth": "^0.1.5",
+    "passport-linkedin": "^1.0.0",
+    "passport-linkedin-oauth2": "^1.4.1",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "^1.0.4",
+    "regex-email": "^1.0.2",
+    "serve-favicon": "^2.3.0",
+    "smtp-connection": "^2.12.0"
+  }
+}
